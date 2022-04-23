@@ -1,0 +1,90 @@
+.card-container {
+    display: flex;
+    margin: 10px;
+    width: 95%;
+    height: 100px;
+    box-shadow: 0px 0px 8px 0px  black;
+    border-radius: 8px;
+}
+
+.card-tap-catcher {
+    position: absolute;
+    width: inherit;
+    height: 100px;
+}
+
+.plant-image-container {
+    flex: 15%
+}
+
+.plant-data {
+    flex: 50%;
+    text-align: left;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.plant-data h2 {
+    margin: 0;
+}
+
+.plant-data p {
+    margin: 0;
+}
+
+.plant-image {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 8px red;
+    transition: 500ms;
+}
+
+.plant-image.zero-percent {
+    border: solid 8px #00ff00;
+}
+
+.plant-image.ten-percent {
+    border: solid 8px #99ff00;
+}
+
+.plant-image.twenty-percent {
+    border: solid 8px #ccff00;
+}
+
+.plant-image.thirty-percent {
+    border: solid 8px #ffff00;
+}
+
+.plant-image.forty-percent {
+    border: solid 8px #ffcc00;
+}
+
+.plant-image.fifty-percent {
+    border: solid 8px #ffbb00;
+}
+
+.plant-image.sixty-percent {
+    border: solid 8px #ff9900;
+}
+
+.plant-image.seventy-percent {
+    border: solid 8px #ff5500;
+}
+
+.plant-image.eighty-percent {
+    border: solid 8px #ff3300;
+}
+
+.plant-image.ninety-percent {
+    border: solid 8px #ff0000;
+}
+
+.plant-image.hundred-percent {
+    border: solid 8px #000000;
+}

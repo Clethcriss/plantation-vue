@@ -9,7 +9,7 @@ div(v-else)
 </template>
 
 <script lang="ts">
-import { ComputedRef, defineComponent, PropType } from "vue";
+import { ComputedRef, defineComponent } from "vue";
 import { useStore } from "../../store/store";
 import { Plant } from "../../types";
 import PlantCard from "../../components/plantCard/plantCard.vue";
@@ -20,6 +20,7 @@ export default defineComponent({
   setup() {
     const { getters } = useStore();
     const plantList: ComputedRef<Plant[]> = getters.getPlants;
+    console.log('plantList: ', plantList);
 
     return {
       plantList

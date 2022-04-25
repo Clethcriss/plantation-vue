@@ -1,12 +1,14 @@
-import { StoreActions } from "../../types";
+import { State, StoreActions } from "../../types";
 import { TPlant } from "../../../../plantation-frontend/src/common/interfaces";
 import { PlantService } from "../../services/PlantService";
 
-export const createActions = (state: any, dependencies: {plantService: PlantService}): StoreActions => {
+export const createActions = (state: State, dependencies: {plantService: PlantService}): StoreActions => {
   return {
-    savePlant: async (plant: TPlant): Promise<void> => new Promise((res) => res),
-    getPlants: async (): Promise<TPlant[]> => new Promise((res) => {
-      return dependencies.plantService.getPlants();
-    })
+    savePlant: async (plant: TPlant): Promise<void> => dependencies.plantService.savePlant(plant),
+    fetchPlants: async () => {
+      const plants = await dependencies.plantService.getPlants();
+      console.log('plants: ', plants);
+      state.plants = plants;
+    }
   }
 }

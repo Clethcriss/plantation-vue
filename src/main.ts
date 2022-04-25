@@ -20,11 +20,11 @@ declare global {
   return app
     .provide(PlantServiceKey, plantService)
     .use(createStore({plantService}))
-      .use(
-          createRouter({
-            history: createWebHashHistory(),
-            routes
-          })
-      )
-      .mount('#app');
+    .use(
+        createRouter({
+          history: createWebHashHistory(),
+          routes
+        })
+    )
+    .mount('#app');
 })();

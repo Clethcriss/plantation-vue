@@ -6,8 +6,13 @@ div
 
 <script lang="ts">
 import Navbar from './components/navbar/navbar.vue';
+import { useStore } from './store/store';
 export default {
-  components: { Navbar }
+  components: { Navbar },
+  setup() {
+    const { actions } = useStore();
+    actions.fetchPlants();
+  }
 }
 </script>
 

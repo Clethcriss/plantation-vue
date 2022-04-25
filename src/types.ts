@@ -2,17 +2,17 @@ import { ComputedRef } from "vue";
 
 export interface StoreActions {
   savePlant(plant: Plant): Promise<void>,
-  getPlants(): Promise<Plant[]>
+  fetchPlants(): Promise<void>
 }
 
 export type State = {
-  plants: Plant[] | undefined;
+  plants: Plant[];
   selectedPlant: Plant | null;
 }
 
 export interface StoreGetters {
   getSelectedPlant: ComputedRef<Plant | null>;
-  getPlants: ComputedRef<Plant[] | undefined>;
+  getPlants: ComputedRef<Plant[]>;
 }
 
 export type Plant = {
@@ -26,5 +26,7 @@ export type Plant = {
 }
 
 export type Store = {
-
+  state: Readonly<State>;
+  actions: StoreActions;
+  getters: StoreGetters;
 }

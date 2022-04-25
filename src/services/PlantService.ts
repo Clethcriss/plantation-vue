@@ -16,14 +16,23 @@ export const injectPlantService = (): PlantService => {
 };
 
 export class PlantService {
-  private _plants: Plant[] | undefined;
+  private _plants: Plant[] = [];
 
-  public getPlants = (): Plant[] => {
-    if (!!this._plants) {
-      return this._plants;
+  public getPlants = (): Promise<Plant[]> => {
+    if (!!this._plants && this._plants.length !== 0) {
+      return new Promise<Plant[]>(resolve => resolve(this._plants));
     } else {
+      console.log("here");
       this._plants = samplePlants;
-      return this._plants;
+      return new Promise<Plant[]>(resolve => resolve(this._plants));
     }
+  }
+
+  // TODO: connect to back end.
+  public savePlant = (plant: Plant): Promise<void> => {
+    if (!!this._plants) {
+      this._plants.push(plant);
+    }
+    return new Promise<void>(resolve => resolve());
   }
 }
